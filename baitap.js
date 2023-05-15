@@ -75,13 +75,15 @@ function timSoDuongNN() {
 function timSoChanCuoi() {
     var arrSoChan = [];
     arr1.forEach(function (item) {
+        arrSoChan[0] = -1;
         if (item % 2 == 0) {
             arrSoChan.push(item);
-        }
+        } 
     });
     // console.log(arrSoChan);
     for (var i = 0; i < arrSoChan.length; i++) {
         var last = arrSoChan[i];
+        // if (arrSoChan[i])
     }
     document.getElementById('soChanCuoi').innerHTML = last;
 }
@@ -154,6 +156,8 @@ function timSoNTDau() {
         if (kiem_tra_snt(arr1[i]*1)) {
             soNTDauTien = arr1[i]*1;
             break;
+        } else {
+            soNTDauTien = -1;
         }
     }
     document.getElementById('soNTDauTien').innerHTML = soNTDauTien;
@@ -188,14 +192,14 @@ function soSanhAmDuong() {
             demDuong++;
         }
     });
-    console.log(demDuong);
+    // console.log(demDuong);
     var demAm = 0;
     arr1.forEach(function (item) {
         if (item < 0) {
             demAm++;
         }
     });
-    console.log(demAm);
+    // console.log(demAm);
 
     if (demDuong > demAm) {
         document.getElementById('soSanhSoLuong').innerHTML = "Số dương > Số âm"
