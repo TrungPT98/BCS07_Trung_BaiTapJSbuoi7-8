@@ -1,10 +1,12 @@
 // Đề bài 1: Cho người dùng nhập vào số nguyên và lưu trữ vào mảng
 
 var arr1 = [];
+var arrNew = []; // mảng cho bài 6
 
 function themSo() {
     var soN = document.getElementById('soN').value * 1;
     arr1.push(soN);
+    arrNew.push(soN);
     document.getElementById('mangNguoiDungNhap').innerHTML = arr1;
 }
 // console.log(arr1);
@@ -97,15 +99,11 @@ function swap(input, vt1, vt2) {
 }
 
 function doiViTri() {
-    var arrNew = [];
+    // var arrNew = [];
     var viTri1 = document.getElementById('viTri1').value * 1;
     var viTri2 = document.getElementById('viTri2').value * 1;
     // console.log(viTri1, viTri2);
 
-    arr1.forEach(function (item) {
-        arrNew.push(item);
-    });
-    // console.log(arrNew);
     swap(arrNew, viTri1, viTri2);
     console.log(arrNew);
     document.getElementById('doiViTri').innerHTML = "Mảng sau khi đổi là: " + arrNew;
@@ -117,7 +115,7 @@ function sapXepTang() {
     arr1.forEach(function (item) {
         arrSapXep.push(item*1);
     });
-    console.log(arrSapXep);
+
     document.getElementById('tangDan').innerHTML = arrSapXep.sort(function(a, b){return a - b});
 }
 
